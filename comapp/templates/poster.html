@@ -37,6 +37,8 @@
       {% endif %}
       <span></span>
       {% if user.is_authenticated %}
+      &nbsp&nbsp&nbsp
+			<a class="headerlogin" href="{% url 'mypage' %}">마이페이지</a>
       <a class="headerlogin" href="{% url 'logout' %}">로그아웃</a>
       {% else %}
       <a class="headerlogin" href="{% url 'login' %}">로그인</a>

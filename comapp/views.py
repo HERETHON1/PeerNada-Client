@@ -44,6 +44,9 @@ def signup(request):
 def main_page(request):
     return render(request, 'main_page.html')
 
+def mypageedit(request):
+    return render(request, 'mypageEdit.html')
+
 # 익명게시판 홈페이지
 def home(request):
     return render(request, 'base.html')#'index.html', {'posts':posts})
