@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 </head>
 <body>
     <div class="contentWrite">    
@@ -40,18 +44,29 @@
             </div>
         </section>
         <section class="contentInput">
-            <input
-                style="margin:3px; width: 90%;" 
-                placeholder="제목"/>
-            <p><input
-                style="margin:3px; width:  90%;"  
-                placeholder="공모전 URL"/>
-            </p>
-            <p><textarea style="width: 90%;" placeholder="내용을 입력해주세요"></textarea></p>
+            <form id="contentabout">
+                <input
+                    required
+                    id="contenttitle"
+                    style="margin-bottom:10px; width: 90%;" 
+                    placeholder="제목"/>
+                <input
+                    required
+                    id="contenturl"
+                    style="margin-bottom:10px; width:  90%;"  
+                    placeholder="공모전 URL"/>
+                <textarea 
+                    required
+                    style="width: 90%; margin-bottom: 10px;" 
+                    placeholder="내용을 입력해주세요"
+                    id="contentdetail"
+                    ></textarea>
+            </form>
         </section>
     </div>
     <div style="text-align: center;">
-    <input 
+    <input
+        form="contentabout"
         style='border-radius: 5px; width: 150px;padding-left: 5px;padding-right: 5px; background-color: #FB9749; color: white;' 
         type="submit" 
         value="글 게시하기" />

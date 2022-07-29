@@ -67,8 +67,11 @@ body{
 .contentInput{
     text-align: center;
     border-radius: 10px;
-    /* margin: 16px; */
+    margin-bottom: 25px;
     /* margin-top: 16px; */
+}
+.contentInput input{
+    margin-bottom: 10px;
 }
 input{
     border-radius: 10px;
