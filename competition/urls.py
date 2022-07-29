@@ -13,6 +13,8 @@ urlpatterns = [
     path('login/', accounts_views.login, name='login'),
     path('logout/', accounts_views.logout, name='logout'),
     path('signup/', accounts_views.signup, name='signup'),    
+    path('profile/', accounts_views.profile, name="profile"),
+    path('profile_mod/', accounts_views.profile_mod, name="profile_mod"),
     
     # 추가 구현 (회원 정보 입력 페이지)
     path('user_info', accounts_views.user_info, name='user_info'),
@@ -23,7 +25,6 @@ urlpatterns = [
 
     # 검색 기능
     path('search/', views.search, name='search'),
-
 
     path('freehome', views.freehome, name='freehome'),
     path('freepostcreate/', views.freepostcreate, name='freepostcreate'),

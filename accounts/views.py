@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib import auth # auth를 통해 로그인, 로그아웃 기능 구현
 from django.contrib.auth.models import User
+from .models import Profile
 
 def login(request):
     if request.method == "POST":
@@ -43,3 +44,12 @@ def user_info_select(request):
 # 회원가입 완료
 def sign_finish(request):
     return render(request, 'sign_finish.html')
+
+# 마이페이지
+def profile(request):
+    profile_info = Profile.objects.filter(user_id=request.user) #특정 user_id로 .. 아마 request.user 같은 거로 바꾸면 될 듯
+    return render(request, "mypage.html", {'profile_infos':profile_info})
+
+# 마이페이지 수정
+def profile_mod(request):
+    return render(request, "profile_mod.html")
