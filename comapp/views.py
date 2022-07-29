@@ -1,8 +1,40 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import CommentForm, PostForm, FreePostForm, FreeCommentForm
-from .models import Post, FreePost
+from .models import Post, FreePost, User
 from django.core.paginator import Paginator
 from django.db.models import Q
+from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
+from django.contrib import auth # auth를 통해 로그인, 로그아웃 기능 구현
+
+def login(request):
+    if request.method == "POST":
+        username = request.POST["username"]
+        password = request.POST["password"]
+        user = auth.authenticate(request, username=username, password=password)
+    
+        # 실제로 장고 안에 존재하는 회원이라면 로그인 해주기
+        if user is not None:
+            auth.login(request, user)
+            return redirect('home')
+        else: 
+            return render(request, 'bad_login.html')
+    else:
+        return render(request, 'login.html')
+
+def logout(request):
+    auth.logout(request)
+    return redirect('home')
+
+def signup(request):
+    if request.method == "POST":
+        if request.POST['password'] == request.POST['repeat']:
+            # 회원가입
+            new_user = User.objects.create_user(username=request.POST['username'], password=request.POST['password'])
+            # 로그인
+            auth.login(request, new_user)
+            # 홈 리다이렉션
+            return redirect('home')
+    return render(request, 'register.html')
 
 # 메인 페이지
 def main_page(request):
@@ -10,12 +42,7 @@ def main_page(request):
 
 # 익명게시판 홈페이지
 def home(request):
-    posts = Post.objects.filter().order_by('-date') # 날짜를 오름차순으로 가져와라 (-date : 내림차순)
-    # post : 객체들의 목록 ; 목록을 끊어라 (숫자 : 몇개씩 끊을 것인지)
-    paginator = Paginator(posts, 5)
-    pagnum = request.GET.get('page')
-    posts = paginator.get_page(pagnum)
-    return render(request, 'index.html', {'posts':posts})
+    return render(request, 'base.html')#'index.html', {'posts':posts})
 
 def postcreate(request):
     # request method가 POST일 경우
@@ -92,4 +119,15 @@ def search(request):
         return render(request, 'search.html')
 
 def post(request):
+    if request.method == 'POST':
+        contenttitle = request.POST['contentdetail']
+        contenturl = request.POST['contenturl']
+        contentdetail = request.POST['contentdetail']
+    return render(request, 'allcontent.html')
+
+def addpost(request):
+    now_user = User.objects.all().filter(id=request.user)
+    return render(request, 'content.html', {'now_users':now_user})
+
+# def allconte
     return render(request, 'allcontent.html')

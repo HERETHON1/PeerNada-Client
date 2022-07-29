@@ -1,0 +1,168 @@
+header {
+	text-align: right;
+	height: 40px;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	margin-top: 20px;
+}
+.headersign {
+	color: #fb9749;
+}
+header a:hover {
+	color: #fb9749;
+}
+a {
+	text-decoration: none;
+	color: var(--text-color);
+	margin-right: 3%;
+}
+.navbar {
+	display: flex;
+	background-color: #fdf6f0;
+	height: 80px;
+}
+.navbar_logo {
+	margin-left: 3%;
+}
+.navbar_menu li {
+	height: 50px;
+	width: 100px;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	text-align: center;
+	margin-right: 30px;
+	margin-top: 5%;
+}
+.navbar_menu {
+	display: flex;
+	list-style: none;
+	margin: auto;
+}
+.navbar_menu li:hover {
+	border-bottom: 3px solid black;
+}
+.signupForm {
+	background: #f3f3f3;
+	border-radius: 50px;
+	width: 800px;
+	height: 796px;
+	margin: 60px auto;
+	padding-top: 50px;
+}
+.signupForm img {
+	display: block;
+	margin: auto;
+	margin-bottom: 80px;
+}
+
+input {
+	display: block;
+	width: 360px;
+	justify-items: center;
+	width: 370px;
+	background: #ffffff;
+	border-radius: 10px;
+	height: 50px;
+	margin: auto;
+	margin-bottom: 20px;
+	border: none;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 18px;
+}
+
+button {
+	display: block;
+	width: 370px;
+	height: 50px;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	text-align: center;
+	color: #ffffff;
+	background: #888888;
+	border-radius: 10px;
+	border: none;
+	margin: 50px auto;
+	margin-bottom: 80px;
+	cursor: pointer;
+}
+p {
+	text-align: center;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 800;
+	font-size: 20px;
+	margin-top: 30px;
+	margin-bottom: 20px;
+}
+h2 {
+	text-align: center;
+	font-family: 'Open Sans';
+	margin-bottom: 50px;
+}
+
+.meeting,
+.select,
+.feedback {
+	margin: auto;
+	width: 366px;
+}
+.meeting input[type='radio'],
+.select input[type='radio'],
+.feedback input[type='radio'] {
+	display: none;
+}
+
+.meeting input[type='radio'] + label,
+.select input[type='radio'] + label,
+.feedback input[type='radio'] + label {
+	display: inline-block;
+	cursor: pointer;
+	height: 39px;
+	width: 180px;
+	border: none;
+	text-align: center;
+	font-weight: 700;
+	font-size: 18px;
+	border-radius: 10px 10px 10px 10px;
+	background-color: #fff;
+	color: #888888;
+	padding-top: 11px;
+}
+
+.meeting input[type='radio']:checked + label,
+.select input[type='radio']:checked + label,
+.feedback input[type='radio']:checked + label {
+	background-color: #fbdcbf;
+	color: black;
+}
+
+.success {
+	display: none;
+	background: #f3f3f3;
+	border-radius: 50px;
+	width: 800px;
+	height: 796px;
+	margin: 60px auto;
+	padding-top: 50px;
+}
+.success p {
+	display: block;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	margin-bottom: 10%;
+	color: #888888;
+}
+.success img {
+	display: block;
+	margin: 20% auto 11%;
+}
