@@ -119,10 +119,14 @@ def search(request):
         return render(request, 'search.html')
 
 def post(request):
+    if request.method == 'POST':
+        contenttitle = request.POST['contentdetail']
+        contenturl = request.POST['contenturl']
+        contentdetail = request.POST['contentdetail']
     return render(request, 'allcontent.html')
 
 def addpost(request):
     now_user = User.objects.all().filter(id=request.user)
-    # if request.method == 'POST':
-        # post = 
     return render(request, 'content.html', {'now_users':now_user})
+
+# def allconte

@@ -12,7 +12,7 @@ function handleContent(event) {
   console.log(url);
   console.log(detail);
   toastr.success("게시 완료되었습니다");
-  window.location.href = "base.html";
+  // window.location.href = "base.html";
 }
 
 Content.addEventListener("submit", handleContent);

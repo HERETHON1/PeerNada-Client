@@ -1,12 +1,12 @@
 from django import forms
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
-from .models import Post, Comment, FreePost, FreeComment, User
+from .models import  FreePost, FreeComment, User, Post, Comment
 
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = '__all__' # 전체 값 입력
-      # fields = ['title', 'body'] # 특정 값만 입력받고 싶을 때
+    #   fields = ['title', 'body'] # 특정 값만 입력받고 싶을 때
 
 class CommentForm(forms.ModelForm):
     class Meta:

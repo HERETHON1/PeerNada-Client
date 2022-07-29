@@ -32,7 +32,7 @@ admin.site.register(User, UserAdmin)
 admin.site.register(Post)
 
 #admin 사이트에 Comment 등록
-admin.site.register(Comment)
+# admin.site.register(Comment)
 
 admin.site.register(FreePost)
 admin.site.register(FreeComment)
