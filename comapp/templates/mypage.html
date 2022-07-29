@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>피어peer나다</title>
+		<link rel="stylesheet" href="/css/my.css" />
+	</head>
+	<body>
+		<header>
+			<a class="headerlogin" href="{% url 'login' %}">로그인</a>
+			<a href="{% url 'signup' %}">회원가입</a>
+		</header>
+		<nav class="navbar">
+			<div class="navbar_logo">
+				<img src="../static/img/navLogo.svg" />
+			</div>
+			<ul class="navbar_menu">
+				<li><a href="{% url 'home' %}">홈</a></li>
+				<li><a href="">공모전</a></li>
+				<li><a href="">게시판</a></li>
+			</ul>
+		</nav>
+		<div class="form">
+			<div class="imgs">
+				<img src="../static/img/profileimg.svg" />
+				<img src="../static/img/mbtiimg.svg" />
+				<img src="../static/img/myinfo.svg" />
+				<img src="../static/img/portimg.svg" />
+			</div>
+			<div>
+				<button class="edit">프로필 수정</button>
+			</div>
+			<img class="group" src="../static/img/Group.svg" />
+			<img class="scrap" src="../static/img/scrap.svg" />
+		</div>
+	</body>
+</html>
