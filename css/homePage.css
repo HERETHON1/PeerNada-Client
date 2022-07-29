@@ -1,0 +1,56 @@
+.mainImg {
+	width: 100%;
+	padding: 0px;
+}
+header {
+	text-align: right;
+	height: 40px;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	margin-top: 20px;
+}
+header a:hover {
+	color: #fb9749;
+}
+a {
+	text-decoration: none;
+	color: var(--text-color);
+	margin-right: 3%;
+}
+.navbar {
+	display: flex;
+	background-color: #fdf6f0;
+	height: 80px;
+}
+
+.navbar_logo {
+	margin-left: 3%;
+}
+
+.navbar_menu li {
+	height: 50px;
+	width: 100px;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	text-align: center;
+	margin-right: 30px;
+	margin-top: 5%;
+}
+
+.navbar_menu {
+	display: flex;
+	list-style: none;
+	margin: auto;
+}
+
+.navbar_menu li:hover {
+	border-bottom: 3px solid black;
+}
+
+.homenav {
+	border-bottom: 3px solid black;
+}
