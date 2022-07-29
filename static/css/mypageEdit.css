@@ -1,0 +1,183 @@
+header {
+	text-align: right;
+	height: 40px;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	margin-top: 20px;
+}
+header a:hover {
+	color: #fb9749;
+}
+a {
+	text-decoration: none;
+	color: var(--text-color);
+	margin-right: 3%;
+}
+.navbar {
+	display: flex;
+	background-color: #fdf6f0;
+	height: 80px;
+}
+
+.navbar_logo {
+	margin-left: 3%;
+}
+.navbar_menu li {
+	height: 50px;
+	width: 100px;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	text-align: center;
+	margin-right: 30px;
+	margin-top: 5%;
+}
+
+.navbar_menu {
+	display: flex;
+	list-style: none;
+	margin: auto;
+}
+
+.navbar_menu li:hover {
+	border-bottom: 3px solid black;
+}
+
+.mypageform {
+	width: 80%;
+	margin: 30px auto;
+	background: #f3f3f3;
+	border-radius: 5px;
+	padding-left: 7%;
+	padding-right: 80px;
+	padding-bottom: 40px;
+}
+.meeting,
+.select,
+.feedback {
+	margin: auto;
+	width: 330px;
+}
+.meeting input[type='radio'],
+.select input[type='radio'],
+.feedback input[type='radio'] {
+	display: none;
+}
+
+.meeting input[type='radio'] + label,
+.select input[type='radio'] + label,
+.feedback input[type='radio'] + label {
+	display: inline-block;
+	cursor: pointer;
+	height: 39px;
+	width: 150px;
+	border: none;
+	text-align: center;
+	font-weight: 700;
+	font-size: 14px;
+	border-radius: 10px 10px 10px 10px;
+	background-color: #fff;
+	color: #888888;
+	padding-top: 11px;
+	text-align: center;
+}
+
+.meeting input[type='radio']:checked + label,
+.select input[type='radio']:checked + label,
+.feedback input[type='radio']:checked + label {
+	background-color: #fbdcbf;
+	color: black;
+}
+.mypageform {
+	padding-top: 20px;
+}
+.editform {
+	display: flex;
+}
+.profile {
+	margin-bottom: 50px;
+}
+.profile p {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	text-align: center;
+}
+.profile img {
+	display: block;
+	margin: 0 auto;
+}
+.left {
+	display: inline-block;
+	width: 45%;
+}
+.left p,
+.right p {
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 27px;
+	text-align: center;
+}
+
+.left p {
+	margin-top: 30px;
+}
+.right p {
+	margin-top: 40px;
+}
+.center {
+	background: #d9d9d9;
+	width: 5px;
+	margin-left: 30px;
+	margin-right: 30px;
+}
+.right {
+	width: 45%;
+}
+.portDiv {
+	background: #ffffff;
+	border-radius: 20px;
+	width: 130px;
+	height: 117px;
+	margin: auto;
+	padding-top: 13px;
+}
+.portDiv img {
+	display: block;
+	margin: auto;
+}
+input {
+	display: block;
+	margin: auto;
+	background: #ffffff;
+	border-radius: 10px;
+	width: 300px;
+	height: 50px;
+	border: none;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 15px;
+	text-align: center;
+	color: #888888;
+}
+.finish {
+	display: block;
+	width: 360px;
+	height: 50px;
+	background: #888888;
+	border-radius: 10px;
+	font-weight: 700;
+	font-size: 24px;
+	text-align: center;
+	margin: 50px auto;
+	color: #ffffff;
+	border: none;
+	cursor: pointer;
+}
