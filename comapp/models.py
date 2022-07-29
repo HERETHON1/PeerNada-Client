@@ -50,12 +50,12 @@ class User(AbstractBaseUser):
         unique=True,
         null=False
     )
-    username = models.CharField(max_length=30, unique=True, null=False)
+    username = models.CharField(max_length=30, unique=True, null=False, default="")
     id = models.CharField(max_length=30, unique=True, null=False, primary_key=True)
-    mbti = models.CharField(max_length=5, unique=False, null=True)
-    meeting= models.BooleanField(unique=False, null=True, editable=True) #안되면 boolean으로 바꾸기
-    feedback=models.BooleanField(unique=False, null=True, editable=True)
-    ongoing=models.BooleanField(unique=False, null=True,editable=True)
+    mbti = models.CharField(max_length=5, unique=False, null=True, default="ISTJ")
+    meeting= models.BooleanField(unique=False, null=True, editable=True, default=True) #안되면 boolean으로 바꾸기
+    feedback=models.BooleanField(unique=False, null=True, editable=True, default=True)
+    ongoing=models.BooleanField(unique=False, null=True,editable=True, default=True)
     info=models.CharField(max_length=100, unique=True, null=False)
     main_act=models.CharField(max_length=100, unique=True, null=False)
     is_admin = models.BooleanField(default=False)
