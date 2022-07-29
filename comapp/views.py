@@ -123,62 +123,20 @@ def search(request):
         return render(request, 'search.html')
 
 def post(request):
-    # print("출력")
-    # if request.method == "POST":
-    #     print("post")
-    #     contenttitle = request.POST['contentdetail']
-    #     contenturl = request.POST['contenturl']
-    #     contentdetail = request.POST['contentdetail']
-    #     content = {
-    #         'title':contenttitle,
-    #         'url':contenturl,
-    #         'body':contentdetail,
-    #         'user':request.user
-    #     }
-    #     print("출력")
-    #     # post = Post()
-    #     # post.title = contenttitle
-    #     # post.url = contenturl
-    #     # post.body = contentdetail
-    #     # post.user = request.user
-    #     # print(post)
-    #     # post.save()
-    #     return redirect('allcontent') #, {'posts':post})
-    # else:
-        return render(request, 'allcontent.html')
+    posts = Post.objects.all()
+    return render(request, 'allcontent.html', {'posts':posts})
 
 
-# def allconte
-def post(request):
-    return render(request, 'allcontent.html')
+# # def allconte
+# def post(request):
+#     return render(request, 'allcontent.html')
 
 def profilemodal(request):
     return render(request, 'profilemodal.html')
 
 def addpost(request):
-    # if request.method == "POST":
-    #     print("post")
-    #     contenttitle = request.POST['contentdetail']
-    #     contenturl = request.POST['contenturl']
-    #     contentdetail = request.POST['contentdetail']
-    #     content = {
-    #         'title':contenttitle,
-    #         'url':contenturl,
-    #         'body':contentdetail,
-    #         'user':request.user
-    #     }
-    #     print("출력")
-    #     # post = Post()
-    #     # post.title = contenttitle
-    #     # post.url = contenturl
-    #     # post.body = contentdetail
-    #     # post.user = request.user
-    #     # print(post)
-    #     # post.save()
-    #     return redirect('allcontent') #, {'posts':post})
-    # else:
-        now_user = User.objects.all().filter(id=request.user)
-        return render(request, 'content.html', {'now_users':now_user})
+    now_user = User.objects.all().filter(id=request.user)
+    return render(request, 'content.html', {'now_users':now_user})
 
 def create(request):
     if request.method == "POST":
