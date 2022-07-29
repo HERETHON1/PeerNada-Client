@@ -90,3 +90,6 @@ def search(request):
     
     else:
         return render(request, 'search.html')
+
+def post(request):
+    return render(request, 'allcontent.html')

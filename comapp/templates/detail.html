@@ -1,26 +1,109 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<h2 class="alert alert-primary">{{post_detail.title}}</h2>
-<span class="badge rounded-pill bg-light">{{post_detail.date}}</span>
-<br/><hr/>
-<p>
-    {{post_detail.body}}
-</p>
-
-<!-- 댓글 목록 공간 -->
-{% for comment in post_detail.comment_set.all %}
-<span class="badge rounded-pill bg-light">{{comment.date}}</span>
-{{ comment }}
-<hr>
-{% endfor %}
-
-<!-- 댓글 입력 공간 -->
-<form method="POST" action="{% url 'new_comment' post_detail.id %}">
-    {% csrf_token %}
-    <div class="form-group">
-    {{ comment_form }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/content.css">
+	<link rel="stylesheet" href="/css/homePage.css" />
+    <link rel="stylesheet" href="css/detail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <a href="loginPage.html">로그인</a>
+        <a class="headersign" href="signupPage.html">회원가입</a>
+    </header>
+    <nav class="navbar">
+        <div class="navbar_logo">
+            <img src="./image/navLogo.svg" />
+        </div>
+        <ul class="navbar_menu">
+            <li><a href="index.html">홈</a></li>
+            <li><a href="">공모전</a></li>
+            <li><a href="allcontent.html">게시판</a></li>
+        </ul>
+    </nav>
+    <div class="mainbox">
+        <section class="profile">
+            <div class="me">
+                <img src="img/who.png" 
+                    style="border-radius:50%;border: 3px solid #FB9749;">
+                <div style="text-align:center"><b>김멋사</b></div>
+            </div>
+            <div class="mbti">
+                <div style="padding-top: 15px; padding-left: 15px;"><b>ISTJ</b></div>
+                <div style="padding:15px;color: #FB9749">
+                    #온라인<br/>
+                    #직설적으로<br/>
+                    #계획대로
+                </div>
+            </div>
+            <div class="oneline">
+                <div>한줄소개</div>
+                <div class="my">아자자자자자자자자</div>
+                <div>주요 활동</div>
+                <div class="my">기획, 디자인, 개발, 데이터 블라블라</div>
+            </div>
+            <div class="portfolio">
+                <div style="text-align:center"><b>포트폴리오</b></div>
+                <img src="img/portfolio.png" style=" width: 5vw;"/>
+            </div>
+        </section>
+        <section class="detail">
+            <div class="title">
+                기획 공모전 같이 참가하실 PEER 구합니다.
+            </div>
+            <div class="url">
+                <img style="width:10px" src="img/url.png">
+                https://github.com/HERETHON1/PeerNada-Client
+            </div>
+            <div class="date">
+                7/26 23:25
+            </div>
+            <div class="detailcontent">
+                안녕하세요. 멋사 소재 멋사 관련 학과에 재학 중인 김멋사입니다.
+                다수의 기획 공모전 관련 수상 경험이 있고, @@ 과 ## 툴 사용에 능합니다.
+                함께 열심히 관련 공모전에 참여할 팀원을 구합니다.
+                댓글 남겨주시면 프로필 확인 후 답글 달도록 하겠습니다.
+            </div>
+        </section>
+        <section class="commentcontainer">
+            <div style="color: #888888; margin: 5px; padding-left: 10px;">댓글 <img style="width:15px" src="img/comment.png"/></div>
+            <div class="comments">
+                <div class="comment">
+                    <div style="display: flex;">
+                        <img style="width:20px" src="img/who.png"/>
+                        <div style="padding-left: 10px;">이멋사</div>
+                    </div>
+                    <div style="margin: 5px 0;">함께 하고 싶습니다. 프로필 확인해주세요 :)</div>
+                    <button class="commentbtn">답글</button>
+                </div>
+                <div class="comment">
+                    <div style="display: flex;">
+                        <img style="width:20px" src="img/who.png"/>
+                        <div style="padding-left: 10px;">이멋사</div>
+                    </div>
+                    <div style="margin: 5px 0;">함께 하고 싶습니다. 프로필 확인해주세요 :)</div>
+                    <button class="commentbtn">답글</button>
+                </div>
+                <div class="comment mine">
+                    <div style="display: flex;">
+                        <img style="width:20px" src="img/who.png"/>
+                        <div style="padding-left: 10px;">나멋사</div>
+                    </div>
+                    <form id="addcomment">
+                        <div style="margin: 5px 0;"><textarea id="mycomment" placeholder="댓글을 작성해주세요."></textarea></div>
+                        <button type="submit" id="addbtn">등록</button>
+                    </form>
+                    
+                </div>
+            </div>
+        </section>
     </div>
-    <input type="submit" class="btn-primary btn-icon-split btn-sm" value="댓글 입력">
-</form>
-{% endblock %}
+    <script src="js/detail.js"></script>
+</body>
+</html>
