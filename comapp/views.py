@@ -96,3 +96,6 @@ def post(request):
 
 def addpost(request):
     return render(request, 'content.html')
+    
+def profilemodal(request):
+    return render(request, 'profilemodal.html')

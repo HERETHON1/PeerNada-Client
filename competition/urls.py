@@ -5,6 +5,7 @@ from accounts import views as accounts_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('allcontent/profilemodal',views.profilemodal,name='profilemodal'),
     path('', views.home, name='home'),
     path('allcontent/', views.post, name="allcontent"),
     path('postcreate/', views.postcreate, name='postcreate'),
