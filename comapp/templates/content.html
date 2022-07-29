@@ -87,8 +87,9 @@
           </div>
         </section>
         <section class="contentInput">
-          <form id="contentabout">
+          <form id="contentabout" action="{%url 'create'%}" method="POST">
             <input
+              type="text"
               required
               id="contenttitle"
               name="contenttitle"
@@ -96,6 +97,7 @@
               placeholder="제목"
             />
             <input
+              type="text"
               required
               id="contenturl"
               name="contenturl"
@@ -109,10 +111,24 @@
               id="contentdetail"
               name="contentdetail"
             ></textarea>
+            <!-- <input
+              form="contentabout"
+              style="
+                border-radius: 5px;
+                width: 150px;
+                padding-left: 5px;
+                padding-right: 5px;
+                background-color: #fb9749;
+                color: white;
+              "
+              type="submit"
+              value="글 게시하기"
+            /> -->
+            <button type="submit">글 게시하기</button>
           </form>
         </section>
       </div>
-      <div style="text-align: center">
+      <!-- <div style="text-align: center">
         <a href="{%url 'allcontent'%}">
           <input
             form="contentabout"
@@ -128,7 +144,7 @@
             value="글 게시하기"
           />
         </a>
-      </div>
+      </div> -->
     </div>
     {%endfor%}
 
