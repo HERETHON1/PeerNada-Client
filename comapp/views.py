@@ -130,3 +130,4 @@ def addpost(request):
     return render(request, 'content.html', {'now_users':now_user})
 
 # def allconte
+    return render(request, 'allcontent.html')
