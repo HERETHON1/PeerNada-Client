@@ -143,3 +143,26 @@ h2 {
 	background-color: #fbdcbf;
 	color: black;
 }
+
+.success {
+	display: none;
+	background: #f3f3f3;
+	border-radius: 50px;
+	width: 800px;
+	height: 796px;
+	margin: 60px auto;
+	padding-top: 50px;
+}
+.success p {
+	display: block;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	margin-bottom: 10%;
+	color: #888888;
+}
+.success img {
+	display: block;
+	margin: 20% auto 11%;
+}
