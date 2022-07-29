@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <form action="{% url 'profile_mod' %}" method="post">
+      <div>선호하는진행 방식</div>
+      <input type="radio" />계획 철저히 <input type="radio" />일단 시작
+
+      <div>MBTI</div>
+      <input type="text" placeholder="예시) ISTJ 영문 4글자를 입력해주세요" />
+
+      <div>선호하는 회의 방식</div>
+      <input type="radio" />온라인 <input type="radio" />오프라인
+
+      <div>선호하는 피드백 방식</div>
+      <input type="radio" />직설적으로 <input type="radio" />우회적으로
+
+      <div>한 줄 소개</div>
+      <input type="text" placeholder="나를 표현하는 한 줄을 작성하세요" />
+
+      <div>주요 활동</div>
+      <input type="text" placeholder="관심 있는 분야, 활동을 작성하세요" />
+    </form>
+  </body>
+</html>
+<br /><br />
