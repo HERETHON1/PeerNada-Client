@@ -48,11 +48,12 @@
         <img src="/static/image/navLogo.svg" />
       </div>
       <ul class="navbar_menu">
-        <li><a href="index.html">홈</a></li>
+        <li><a href="{% url 'home' %}">홈</a></li>
         <li><a href="">공모전</a></li>
-        <li><a href="allcontent.html">게시판</a></li>
+        <li><a href="{% url 'allcontent' %}">게시판</a></li>
       </ul>
     </nav>
+    {% for now_user in now_users %}
     <div class="contentWrite">
       <div class="mainbox">
         <section class="profile">
@@ -61,21 +62,24 @@
               src="/static/img/who.png"
               style="border-radius: 50%; border: 3px solid #fb9749"
             />
-            <div style="text-align: center"><b>김멋사</b></div>
+            <div style="text-align: center"><b>{{now_user.username}}</b></div>
           </div>
           <div class="mbti">
             <div style="padding-top: 15px; padding-left: 15px"><b>ISTJ</b></div>
             <div style="padding: 15px; color: #fb9749">
-              #온라인<br />
-              #직설적으로<br />
-              #계획대로
+              {% if now_user.meeting == True%} #온라인 {% else %} #오프라인
+              {%endif%}<br />
+              {% if now_user.feedback == True%} #직설적으로 {% else %}
+              #우회적으로 {%endif%} <br />
+              {% if now_user.ongoing == True%} #계획대로 {% else %} #일단시작
+              {%endif%}
             </div>
           </div>
           <div class="oneline">
             <div>한줄소개</div>
-            <div class="my">아자자자자자자자자</div>
+            <div class="my">{{now_user.info}}</div>
             <div>주요 활동</div>
-            <div class="my">기획, 디자인, 개발, 데이터 블라블라</div>
+            <div class="my">{{now_user.main_act}}</div>
           </div>
           <div class="portfolio">
             <div style="text-align: center"><b>포트폴리오</b></div>
@@ -120,9 +124,10 @@
             type="submit"
             value="글 게시하기"
           />
-      </a>
+        </a>
       </div>
     </div>
+    {%endfor%}
 
     <script src="/static/js/content.js"></script>
   </body>

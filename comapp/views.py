@@ -42,11 +42,6 @@ def main_page(request):
 
 # 익명게시판 홈페이지
 def home(request):
-    # posts = Post.objects.filter().order_by('-date') # 날짜를 오름차순으로 가져와라 (-date : 내림차순)
-    # # post : 객체들의 목록 ; 목록을 끊어라 (숫자 : 몇개씩 끊을 것인지)
-    # paginator = Paginator(posts, 5)
-    # pagnum = request.GET.get('page')
-    # posts = paginator.get_page(pagnum)
     return render(request, 'base.html')#'index.html', {'posts':posts})
 
 def postcreate(request):
@@ -127,4 +122,7 @@ def post(request):
     return render(request, 'allcontent.html')
 
 def addpost(request):
-    return render(request, 'content.html')
+    now_user = User.objects.all().filter(id=request.user)
+    # if request.method == 'POST':
+        # post = 
+    return render(request, 'content.html', {'now_users':now_user})

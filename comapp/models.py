@@ -5,9 +5,10 @@ from django.contrib.auth.models import (BaseUserManager, AbstractBaseUser)
 
 # 게시물 모델
 class Post(models.Model):
-    title = models.CharField(max_length=200)
-    body = models.TextField()
-    date = models.DateTimeField(auto_now_add=True)
+    title = models.CharField(max_length=200, null=False, unique=True)
+    url = models.CharField(max_length=200, null=True, unique=True)
+    body = models.TextField(null=False, unique=True)
+    date = models.DateTimeField(auto_now_add=True,unique=False)
 
     # 제목이 그대로 보이도록
     def __str__(self):
