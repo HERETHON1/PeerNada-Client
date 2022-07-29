@@ -25,7 +25,7 @@
 		/>
 
 		<!-- Custom styles for this template-->
-		<link href="{% static 'css/home.css' %}" rel="stylesheet" />
+		<link href="{% static 'css/posterPage.css' %}" rel="stylesheet" />
 	</head>
 
 	<body>
@@ -48,12 +48,12 @@
 				<img src="/static/img/navLogo.svg" />
 			</div>
 			<ul class="navbar_menu">
-				<li class="homenav"><a href="{% url 'home' %}">홈</a></li>
-				<li><a href="{% url 'poster' %}">공모전</a></li>
+				<li><a href="{% url 'home' %}">홈</a></li>
+				<li class="posternav"><a href="{% url 'poster' %}">공모전</a></li>
 				<li><a href="{%url 'allcontent'%}">게시판</a></li>
 			</ul>
 		</nav>
-		<img class="mainImg" src="./static/img/home.svg" />
+		<img class="mainImg" src="/static/img/poster.png" />
 
 		<!-- Bootstrap core JavaScript-->
 		<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
