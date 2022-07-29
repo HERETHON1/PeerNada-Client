@@ -93,3 +93,6 @@ def search(request):
 
 def post(request):
     return render(request, 'allcontent.html')
+
+def addpost(request):
+    return render(request, 'content.html')
