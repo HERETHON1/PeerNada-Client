@@ -130,4 +130,10 @@ def addpost(request):
     return render(request, 'content.html', {'now_users':now_user})
 
 # def allconte
+def post(request):
     return render(request, 'allcontent.html')
+
+def addpost(request):
+    return render(request, 'content.html')
+def profilemodal(request):
+    return render(request, 'profilemodal.html')

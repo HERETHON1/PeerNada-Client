@@ -11,7 +11,7 @@ urlpatterns = [
     path('detail/<int:post_id>', views.detail, name='detail'),
     path('new_comment/<int:post_id>', views.new_comment, name='new_comment'),
     path('content', views.addpost, name="content"),
-
+    path('allcontent/profilemodal',views.profilemodal,name='profilemodal'),
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
     path('signup/', views.signup, name='signup'),    
