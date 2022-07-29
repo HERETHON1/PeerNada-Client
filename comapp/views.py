@@ -33,7 +33,7 @@ def signup(request):
             # 로그인
             auth.login(request, new_user)
             # 홈 리다이렉션
-            return redirect('user_info')
+            return redirect('home')
     return render(request, 'register.html')
 
 # 메인 페이지
