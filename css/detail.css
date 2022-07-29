@@ -20,6 +20,7 @@ body{
     margin-bottom: 20px;
 }
 .commentbtn{
+    /* font-size: 10px; */
     background-color: #666666;
     border-radius: 5px;
     font-weight: 700;
