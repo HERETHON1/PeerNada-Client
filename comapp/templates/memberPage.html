@@ -9,13 +9,13 @@
   <body>
     <header>
       {% if user.is_authenticated %}
-      <span class="loginName">{{user.username}}</span><span>님</span>
+      <span class="loginName">{{user.username}}님</span>
       {% else %}
       <span></span>
       {% endif %}
       <span></span>
       {% if user.is_authenticated %}
-      <a class="headerlogin" href="{% url 'login' %}">로그아웃</a>
+      <a class="headerlogin" href="{% url 'logout' %}">로그아웃</a>
       {% else %}
       <a class="headerlogin" href="{% url 'login' %}">로그인</a>
       <a href="{% url 'signup' %}">회원가입</a>

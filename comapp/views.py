@@ -154,7 +154,7 @@ def post(request):
 
 def profilemodal(request):
     return render(request, 'profilemodal.html')
-    
+
 def addpost(request):
     # if request.method == "POST":
     #     print("post")
