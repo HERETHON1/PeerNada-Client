@@ -1,90 +1,94 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta
+			name="viewport"
+			content="width=device-width, initial-scale=1, shrink-to-fit=no"
+		/>
+		<meta name="description" content="" />
+		<meta name="author" content="" />
+		<title>피어peer나다</title>
+		<!-- Custom fonts for this template-->
+		<link
+			href="{% static 'vendor/fontawesome-free/css/all.min.css' %}"
+			rel="stylesheet"
+			type="text/css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+			rel="stylesheet"
+		/>
+		<!-- Custom styles for this template-->
+		<link href="{% static 'css/register.css' %}" rel="stylesheet" />
+	</head>
 
-<head>
+	<body>
+		<header>
+			<a href="{% url 'login' %}">로그인</a>
+			<a class="headersign" href="{% url 'signup' %}">회원가입</a>
+		</header>
+		<nav class="navbar">
+			<div class="navbar_logo"><img src="../static/img/navLogo.svg"" /></div>
+			<ul class="navbar_menu">
+				<li><a href="{% url 'home' %}">홈</a></li>
+				<li><a href="">공모전</a></li>
+				<li><a href="">게시판</a></li>
+			</ul>
+		</nav>
+		<div class="signupForm">
+			<img src="../static/img/navLogo.svg"" />
+			<form class="user" method="POST">
+				{% csrf_token %}
+				<input class="nameinput" placeholder="이름" type="text" />
 
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
+				<input
+					type="text"
+					name="username"
+					class="idinput"
+					id="exampleInputEmail"
+					placeholder="아이디"
+				/>
+				<input
+					type="password"
+					name="password"
+					class="pwinput"
+					id="exampleInputPassword"
+					placeholder="비밀번호"
+				/>
+				<input
+					type="password"
+					name="repeat"
+					class="pwCinput"
+					id="exampleRepeatPassword"
+					placeholder="비밀번호확인"
+				/>
+				<input class="emailinput" placeholder="이메일" type="email" />
+				<input
+					type="submit"
+					class="registerbtn"
+					href="{% url 'user_info' %}"
+					value="회원가입"
+				/>
+			</form>
+			<div class="goregister">
+				<p>
+					이미 계정이 있으신가요?<br /><a class="gogo" href="{% url 'login' %}"
+						>로그인하러 가기</a
+					>
+				</p>
+			</div>
+		</div>
+		<!-- Bootstrap core JavaScript-->
+		<script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+		<script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
 
-    <title>개발자 대나무숲</title>
+		<!-- Core plugin JavaScript-->
+		<script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
 
-    <!-- Custom fonts for this template-->
-    <link href="{% static 'vendor/fontawesome-free/css/all.min.css' %}" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
-
-    <!-- Custom styles for this template-->
-    <link href="{% static 'css/sb-admin-2.min.css' %}" rel="stylesheet">
-
-</head>
-
-<body class="bg-gradient-primary">
-
-    <div class="container">
-
-        <div class="card o-hidden border-0 shadow-lg my-5">
-            <div class="card-body p-0">
-                <!-- Nested Row within Card Body -->
-                <div class="row">
-                    <div class="col-lg-5 d-none d-lg-block bg-register-image"></div>
-                    <div class="col-lg-7">
-                        <div class="p-5">
-                            <div class="text-center">
-                                <h1 class="h4 text-gray-900 mb-4">Create an Account!</h1>
-                            </div>
-                            <form class="user" method="POST">
-                                {% csrf_token %}
-                                <div class="form-group row">
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="username" class="form-control-user" id="exampleInputEmail"
-                                        placeholder="Enter Your ID">
-                                </div>
-                                <div class="form-group row">
-                                    <div class="col-sm-6 mb-3 mb-sm-0">
-                                        <input type="password" name="password" class="form-control form-control-user"
-                                            id="exampleInputPassword" placeholder="Password">
-                                    </div>
-                                    <div class="col-sm-6">
-                                        <input type="password" name="repeat" class="form-control form-control-user"
-                                            id="exampleRepeatPassword" placeholder="Repeat Password">
-                                    </div>
-                                </div>
-                                <br/>
-                                <br/>
-                                <br/>
-                                <div class="text-center">
-                                <input type="submit" class="btn btn-success btn-user btn-block" href="{% url 'user_info' %}" value="회원가입">
-                                </div>
-                                <hr>
-                            </form>
-                            <hr>
-                            <div class="text-center">
-                                <a class="small" href="{% url 'login' %}">Already have an account? Login!</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <!-- Bootstrap core JavaScript-->
-    <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-    <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
-
-    <!-- Core plugin JavaScript-->
-    <script src="{% static 'vendor/jquery-easing/jquery.easing.min.js' %}"></script>
-
-    <!-- Custom scripts for all pages-->
-    <script src="{% static 'js/sb-admin-2.min.js' %}"></script>
-
-</body>
-
+		<!-- Custom scripts for all pages-->
+		<script src="{% static 'js/sb-admin-2.min.js' %}"></script>
+	</body>
 </html>

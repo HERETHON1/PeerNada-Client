@@ -43,3 +43,7 @@ def user_info_select(request):
 # 회원가입 완료
 def sign_finish(request):
     return render(request, 'sign_finish.html')
+
+# 홈
+def home(request):
+    return render(request, 'home.html')
