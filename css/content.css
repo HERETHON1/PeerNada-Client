@@ -1,8 +1,11 @@
 body{
 	font-family: 'Open Sans';
 	font-style: normal;
+    font-weight: 700;
 }
-
+.my{
+    color: #888888;
+}
 .mainbox{
     
     background-color: #F3F3F3;
@@ -81,14 +84,15 @@ input{
     text-align: center;
     font-size: 20px;
 }
-textarea{
+#contentdetail{
     border-radius: 10px;
     padding: 10px;
     border:none;
     font-size: 14px;
+    font-family: 'Open Sans';
     height: 250px;
 }
-::placeholder{
+.contentabout::placeholder{
     color:#D9D9D9;
     font-family: 'Open Sans';
 	font-style: normal;
