@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/static/css/memberPage.css" />
+  </head>
+  <body>
+    <header>
+      <a href="loginPage.html">로그인</a>
+      <a class="headersign" href="signupPage.html">회원가입</a>
+    </header>
+    <nav class="navbar">
+      <div class="navbar_logo">
+        <img src="/static/img/navLogo.svg" />
+      </div>
+      <ul class="navbar_menu">
+        <li><a href="index.html">홈</a></li>
+        <li><a href="">공모전</a></li>
+        <li><a href="">게시판</a></li>
+      </ul>
+    </nav>
+    <div class="signupForm">
+      <h2>회원 정보</h2>
+      <p>MBTI</p>
+      <input type="text" placeholder="예시) ISTJ 영문 4글자를 입력해주세요" />
+      <p>선호하는 회의 방식</p>
+      <div class="meeting">
+        <input type="radio" id="meeting" name="shop" checked /><label
+          for="meeting"
+          >온라인</label
+        >
+        <input type="radio" id="meeting2" name="shop" /><label for="meeting2"
+          >오프라인</label
+        >
+      </div>
+      <p>선호하는 피드백 방식</p>
+      <div class="feedback">
+        <input type="radio" id="feedback" name="s" checked /><label
+          for="feedback"
+          >직설적으로</label
+        >
+        <input type="radio" id="feedback2" name="s" /><label for="feedback2"
+          >우회적으로</label
+        >
+      </div>
+      <p>선호하는 진행 방식</p>
+      <div class="select">
+        <input type="radio" id="select" name="sh" checked /><label for="select"
+          >계획 철저히</label
+        >
+        <input type="radio" id="select2" name="sh" /><label for="select2"
+          >일단 시작</label
+        >
+      </div>
+      <button class="saveBtn">저장</button>
+    </div>
+    <div class="success">
+      <img src="/static/img/navLogo.svg" />
+      <p>회원 가입 및 회원 정보 등록이<br />완료되었습니다.</p>
+      <button><a href="loginPage.html">로그인하러 가기</a></button>
+    </div>
+  </body>
+  <script src="/static/js/memberPage.js"></script>
+</html>
