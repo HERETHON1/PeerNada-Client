@@ -1,7 +1,6 @@
 # PeerNada-Client
 
 ## Home Page
-<<<<<<< HEAD
 
 ![image](https://user-images.githubusercontent.com/97172766/181671320-262fd293-dbac-47d4-89cd-0cd7be75ac01.png)
 
@@ -15,7 +14,6 @@
 
 ## Register Page
 
-=======
 ![image](https://user-images.githubusercontent.com/97172766/181671320-262fd293-dbac-47d4-89cd-0cd7be75ac01.png)
 
 ## Login Page
@@ -26,5 +24,6 @@
 
 
 ## Register Page
->>>>>>> e9a38ceba9416efb5659e837019890ac89a0410a
 ![image](https://user-images.githubusercontent.com/97172766/181671513-babca0aa-d491-408c-b7dd-eaf141180f5b.png)
+![image](https://user-images.githubusercontent.com/97172766/181681630-a75f0cc6-7090-4833-bb5c-34c4e30439ad.png)
+
