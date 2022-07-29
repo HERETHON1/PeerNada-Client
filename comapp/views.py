@@ -25,6 +25,10 @@ def logout(request):
     auth.logout(request)
     return redirect('home')
 
+def poster(request):
+    auth.logout(request)
+    return render(request, 'poster.html')
+
 def signup(request):
     if request.method == "POST":
         if request.POST['password'] == request.POST['repeat']:
