@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/content.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css" integrity="sha512-3pIirOrwegjM6erE5gPSwkUzO+3cTjpnV9lexlNZqvupR64iZBnOOTiiLPb9M36zpMScbmUNIcHUqKD47M719g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+</head>
+<body>
+    <div class="contentWrite">    
+    <div class="mainbox">
+        <section class="profile">
+            <div class="me">
+                <img src="img/who.png" 
+                    style="border-radius:50%;border: 3px solid #FB9749;">
+                <div style="text-align:center"><b>김멋사</b></div>
+            </div>
+            <div class="mbti">
+                <div style="padding-top: 15px; padding-left: 15px;"><b>ISTJ</b></div>
+                <div style="padding:15px;color: #FB9749">
+                    #온라인<br/>
+                    #직설적으로<br/>
+                    #계획대로
+                </div>
+            </div>
+            <div class="oneline">
+                <div>한줄소개</div>
+                <div class="my">아자자자자자자자자</div>
+                <div>주요 활동</div>
+                <div class="my">기획, 디자인, 개발, 데이터 블라블라</div>
+            </div>
+            <div class="portfolio">
+                <div style="text-align:center"><b>포트폴리오</b></div>
+                <img src="img/portfolio.png" style=" width: 5vw;"/>
+            </div>
+        </section>
+        <section class="contentInput">
+            <form id="contentabout">
+                <input
+                    required
+                    id="contenttitle"
+                    style="margin-bottom:10px; width: 90%;" 
+                    placeholder="제목"/>
+                <input
+                    required
+                    id="contenturl"
+                    style="margin-bottom:10px; width:  90%;"  
+                    placeholder="공모전 URL"/>
+                <textarea 
+                    required
+                    style="width: 90%; margin-bottom: 10px;" 
+                    placeholder="내용을 입력해주세요"
+                    id="contentdetail"
+                    ></textarea>
+            </form>
+        </section>
+    </div>
+    <div style="text-align: center;">
+    <input
+        form="contentabout"
+        style='border-radius: 5px; width: 150px;padding-left: 5px;padding-right: 5px; background-color: #FB9749; color: white;' 
+        type="submit" 
+        value="글 게시하기" />
+    </div>
+    </div>
+    
+    <script src="js/content.js"></script>
+    
+</body>
+</html>
