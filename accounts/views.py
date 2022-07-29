@@ -55,3 +55,6 @@ def sign_finish(request):
 def profile_mod(request):
     
     return render(request, "profile_mod.html")
+# 홈
+def home(request):
+    return render(request, 'home.html')
