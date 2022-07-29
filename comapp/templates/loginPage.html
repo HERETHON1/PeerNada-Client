@@ -9,17 +9,17 @@
 	</head>
 	<body>
 		<header>
-			<a class="headerlogin" href="loginPage.html">로그인</a>
-			<a href="signupPage.html">회원가입</a>
+			<a class="headerlogin" href="{%url 'login'%}">로그인</a>
+			<a href="{%url 'signup'%}">회원가입</a>
 		</header>
 		<nav class="navbar">
 			<div class="navbar_logo">
 				<img src="/static/img/navLogo.svg" />
 			</div>
 			<ul class="navbar_menu">
-				<li><a href="index.html">홈</a></li>
+				<li><a href="{%url 'home'%}">홈</a></li>
 				<li><a href="">공모전</a></li>
-				<li><a href="">게시판</a></li>
+				<li><a href="{%url 'allcontent'%}">게시판</a></li>
 			</ul>
 		</nav>
 		<div class="loginForm">
@@ -29,7 +29,7 @@
 				<input class="pwinput" placeholder="비밀번호" type="password"/>
 				<button>로그인</button>
 			</form>
-      <div class="goregister"><p>계정이 없으신가요?<br><a class="gogo" href="signupPage.html">회원가입하러 가기</a></p></div>
+      <div class="goregister"><p>계정이 없으신가요?<br><a class="gogo" href="{%url 'signup'%}">회원가입하러 가기</a></p></div>
 			
 		</div>
     <div class="successSignup">

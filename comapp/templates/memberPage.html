@@ -8,17 +8,17 @@
   </head>
   <body>
     <header>
-      <a href="loginPage.html">로그인</a>
-      <a class="headersign" href="signupPage.html">회원가입</a>
+      <a href="{%url 'login'%}">로그인</a>
+      <a class="headersign" href="{%url 'signup'%}">회원가입</a>
     </header>
     <nav class="navbar">
       <div class="navbar_logo">
         <img src="/static/img/navLogo.svg" />
       </div>
       <ul class="navbar_menu">
-        <li><a href="index.html">홈</a></li>
+        <li><a href="{%url 'home'%}">홈</a></li>
         <li><a href="">공모전</a></li>
-        <li><a href="">게시판</a></li>
+        <li><a href="{%url 'allcontent'%}">게시판</a></li>
       </ul>
     </nav>
     <div class="signupForm">
@@ -59,7 +59,7 @@
     <div class="success">
       <img src="/static/img/navLogo.svg" />
       <p>회원 가입 및 회원 정보 등록이<br />완료되었습니다.</p>
-      <button><a href="loginPage.html">로그인하러 가기</a></button>
+      <button><a href="{%url 'login'%}">로그인하러 가기</a></button>
     </div>
   </body>
   <script src="/static/js/memberPage.js"></script>
