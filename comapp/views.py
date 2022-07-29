@@ -33,7 +33,7 @@ def signup(request):
     if request.method == "POST":
         if request.POST['password'] == request.POST['repeat']:
             # 회원가입
-            new_user = User.objects.create_user(username=request.POST['username'], password=request.POST['password'])
+            new_user = User.objects.create_user(username=request.POST['username'],id=request.POST['id'],  password=request.POST['password'], email=request.POST['email'], mbti=request.POST['mbti'], meeting=True, feedback=True, ongoing=True, info=request.POST['info'], main_act=request.POST['main_act'])
             # 로그인
             auth.login(request, new_user)
             # 홈 리다이렉션
