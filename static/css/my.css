@@ -1,0 +1,84 @@
+header {
+	text-align: right;
+	height: 40px;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 14px;
+	margin-top: 20px;
+}
+header a:hover {
+	color: #fb9749;
+}
+a {
+	text-decoration: none;
+	color: var(--text-color);
+	margin-right: 3%;
+}
+.navbar {
+	display: flex;
+	background-color: #fdf6f0;
+	height: 80px;
+}
+
+.navbar_logo {
+	margin-left: 3%;
+}
+
+.navbar_menu li {
+	height: 50px;
+	width: 100px;
+	font-family: 'Open Sans';
+	font-style: normal;
+	font-weight: 700;
+	font-size: 24px;
+	text-align: center;
+	margin-right: 30px;
+	margin-top: 5%;
+}
+
+.navbar_menu {
+	display: flex;
+	list-style: none;
+	margin: auto;
+}
+
+.navbar_menu li:hover {
+	border-bottom: 3px solid black;
+}
+.form {
+	width: 75%;
+	margin: 30px auto;
+	background: #f3f3f3;
+	border-radius: 5px;
+	padding-left: 7%;
+	padding-right: 80px;
+	padding-bottom: 40px;
+	padding-top: 50px;
+}
+
+.edit {
+	background: #fb9749;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	border-radius: 10px;
+	width: 350px;
+	height: 50px;
+	border: none;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	font-weight: 700;
+	font-size: 24px;
+	text-align: center;
+	margin-left: 5%;
+	color: #ffffff;
+	cursor: pointer;
+}
+.group,
+.scrap {
+	display: block;
+	margin: 40px auto 40px;
+}
+.imgs img {
+	margin-right: 10px;
+	margin-left: 20px;
+}

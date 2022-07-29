@@ -1,114 +1,257 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="stylesheet" href="/static/css/allcontent.css" />
-    <link rel="stylesheet" href="/static/css/homePage.css" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap"
-      rel="stylesheet"
-    />
-    <title>Document</title>
-  </head>
-  <body>
-    <header>
-      {% if user.is_authenticated %}
-      <span class="loginName">{{user.username}}님</span>
-      {% else %}
-      <span></span>
-      {% endif %}
-      <span></span>
-      {% if user.is_authenticated %}
-      <a class="headerlogin" href="{% url 'logout' %}">로그아웃</a>
-      {% else %}
-      <a class="headerlogin" href="{% url 'login' %}">로그인</a>
-      <a href="{% url 'signup' %}">회원가입</a>
-      {% endif %}
-    </header>
-    <nav class="navbar">
-      <div class="navbar_logo">
-        <img src="/static/img/navLogo.svg" />
-      </div>
-      <ul class="navbar_menu">
-        <li><a href="{%url 'home'%}">홈</a></li>
-        <li><a href="{% url 'poster' %}">공모전</a></li>
-        <li><a href="{%url 'allcontent'%}">게시판</a></li>
-      </ul>
-    </nav>
-    <div class="mainbox">
-      <section class="searchcontainer">
-        <div class="search">
-          <input
-            type="text"
-            class="searchinput"
-            placeholder="게시글 제목, 내용, 해시태그를 검색하세요"
-          />
-          <input class="searchbtn" type="image" src="/static/img/search.png" />
-        </div>
-      </section>
-      <a href="{%url 'content'%}"
-        ><input type="button" id="postbtn" value="게시글 쓰기"
-      /></a>
-      <section class="contentlist">
-        <div class="content">
-          <div style="margin-bottom: 30px">
-            <span class="orange">최신</span> 글
-          </div>
-          <div style="height: 200px; overflow-y: auto; overflow-x: hidden">
-            <table>
-              <tbody>
-                {% for post in posts %}
-                <tr class="line">
-                  <td><span class="orange">{{post.user}}</span>님</td>
-                  <td>{{post.title}}</td>
-                  <td>
-                    <img
-                      style="width: 20px; padding-right: 10px"
-                      src="/static/img/watch.png"
-                    />
-                    <img style="width: 20px" src="/static/img/comment.png" />
-                  </td>
-                </tr>
-                {% endfor %}
-              </tbody>
-            </table>
-          </div>
-        </div>
-        <div class="content">
-          <div style="margin-bottom: 30px">
-            <span class="orange">댓글 많은</span> 글
-          </div>
-          <div style="height: 200px; overflow-y: auto; overflow-x: hidden">
-            <table>
-              <tbody>
-                {% for post in posts reversed %}
-                <tr class="line">
-                  <td><span class="orange">{{post.user}}</span>님</td>
-                  <td>{{post.title}}</td>
-                  <td>
-                    <img
-                      style="width: 20px; padding-right: 10px"
-                      src="/static/img/watch.png"
-                    />
-                    <img style="width: 20px" src="/static/img/comment.png" />
-                  </td>
-                  {% endfor %}
-                </tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </section>
-      <section class="findPeer">
-        <img style="width: 100%" src="/static/img/findPeer.png" />
-      </section>
-    </div>
-    <img style="width: 100%" src="/static/img/Vector.png" />
-    <script src="/static/js/profilemodal.js"></script>
-    <script src="/static/js/allcontent.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="stylesheet" href="/static/css/allcontent.css" />
+		<link rel="stylesheet" href="/static/css/homePage.css" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;700&display=swap"
+			rel="stylesheet"
+		/>
+		<title>Document</title>
+	</head>
+	<body>
+		<header>
+			{% if user.is_authenticated %}
+			<span class="loginName">{{user.username}}</span><span>님</span>
+			{% else %}
+			<span></span>
+			{% endif %}
+			<span></span>
+			{% if user.is_authenticated %}
+			&nbsp&nbsp&nbsp
+			<a class="headerlogin" href="{% url 'mypage' %}">마이페이지</a>
+			
+			<a class="headerlogin" href="{% url 'login' %}">로그아웃</a>
+			{% else %}
+			<a class="headerlogin" href="{% url 'login' %}">로그인</a>
+			<a href="{% url 'signup' %}">회원가입</a>
+			{% endif %}
+		</header>
+		<nav class="navbar">
+			<div class="navbar_logo">
+				<img src="/static/img/navLogo.svg" />
+			</div>
+			<ul class="navbar_menu">
+				<li><a href="{%url 'home'%}">홈</a></li>
+				<li><a href="{% url 'poster' %}">공모전</a></li>
+				<li><a href="{%url 'allcontent'%}">게시판</a></li>
+			</ul>
+		</nav>
+		<div class="mainbox">
+			<section class="searchcontainer">
+				<div class="search">
+					<input
+						type="text"
+						class="searchinput"
+						placeholder="게시글 제목, 내용, 해시태그를 검색하세요"
+					/>
+					<input class="searchbtn" type="image" src="/static/img/search.png" />
+				</div>
+			</section>
+			<a href="{%url 'content'%}"><input type="button" id="postbtn" value="게시글 쓰기"/></a>
+			<section class="contentlist">
+				<div class="content">
+					<div style="margin-bottom: 30px">
+						<span class="orange">최신</span> 글
+					</div>
+					<div style="height: 200px; overflow-y: auto; overflow-x: hidden">
+						<table>
+							<tbody>
+								<tr class="line">
+									<td>
+										<span class="orange">김멋사</span
+										>님
+									</td>
+									<td id="about">IT 공모전 같이 참가하실 PEER 구합니다</td>
+									<td>
+										<img
+											style="width: 20px; padding-right: 10px"
+											src="/static/img/watch.png"
+										/>
+										<img style="width: 20px" src="/static/img/comment.png" />
+									</td>
+								</tr>
+								<tr class="line">
+									<td>
+										<span class="orange">김멋사</span
+										>님
+									</td>
+									<td>IT 공모전 같이 참가하실 PEER 구합니다</td>
+									<td>
+										<img
+											style="width: 20px; padding-right: 10px"
+											src="/static/img/watch.png"
+										/>
+										<img style="width: 20px" src="/static/img/comment.png" />
+									</td>
+								</tr>
+								<tr class="line">
+									<td>
+										<span class="orange">김멋사</span
+										>님
+									</td>
+									<td>IT 공모전 같이 참가하실 PEER 구합니다</td>
+									<td>
+										<img
+											style="width: 20px; padding-right: 10px"
+											src="/static/img/watch.png"
+										/>
+										<img style="width: 20px" src="/static/img/comment.png" />
+									</td>
+								</tr>
+								<tr class="line">
+									<td>
+										<span class="orange">김멋사</span
+										>님
+									</td>
+									<td>IT 공모전 같이 참가하실 PEER 구합니다</td>
+									<td>
+										<img
+											style="width: 20px; padding-right: 10px"
+											src="/static/img/watch.png"
+										/>
+										<img style="width: 20px" src="/static/img/comment.png" />
+									</td>
+								</tr>
+								<tr class="line">
+									<td>
+										<span class="orange">김멋사</span
+										>님
+									</td>
+									<td>IT 공모전 같이 참가하실 PEER 구합니다</td>
+									<td>
+										<img
+											style="width: 20px; padding-right: 10px"
+											src="/static/img/watch.png"
+										/>
+										<img style="width: 20px" src="/static/img/comment.png" />
+									</td>
+								</tr>
+								<tr class="line">
+									<td>
+										<span class="orange">김멋사</span
+										>님
+									</td>
+									<td>IT 공모전 같이 참가하실 PEER 구합니다</td>
+									<td>
+										<img
+											style="width: 20px; padding-right: 10px"
+											src="/static/img/watch.png"
+										/>
+										<img style="width: 20px" src="/static/img/comment.png" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<div class="content">
+					<div style="margin-bottom: 30px">
+						<span class="orange">댓글 많은</span> 글
+					</div>
+					<div style="height: 200px; overflow-y: auto; overflow-x: hidden">
+						<table>
+							<tbody>
+								<tr class="line">
+									<td>
+										<span class="orange">김멋사</span
+										>님
+									</td>
+									<td>IT 공모전 같이 참가하실 PEER 구합니다</td>
+									<td>
+										<img
+											style="width: 20px; padding-right: 10px"
+											src="/static/img/watch.png"
+										/>
+										<img style="width: 20px" src="/static/img/comment.png" />
+									</td>
+								</tr>
+								<tr class="line">
+									<td>
+										<span class="orange">김멋사</span
+										>님
+									</td>
+									<td>IT 공모전 같이 참가하실 PEER 구합니다</td>
+									<td>
+										<img
+											style="width: 20px; padding-right: 10px"
+											src="/static/img/watch.png"
+										/>
+										<img style="width: 20px" src="/static/img/comment.png" />
+									</td>
+								</tr>
+								<tr class="line">
+									<td>
+										<span class="orange">김멋사</span
+										>님
+									</td>
+									<td>IT 공모전 같이 참가하실 PEER 구합니다</td>
+									<td>
+										<img
+											style="width: 20px; padding-right: 10px"
+											src="/static/img/watch.png"
+										/>
+										<img style="width: 20px" src="/static/img/comment.png" />
+									</td>
+								</tr>
+								<tr class="line">
+									<td>
+										<span class="orange">김멋사</span
+										>님
+									</td>
+									<td>IT 공모전 같이 참가하실 PEER 구합니다</td>
+									<td>
+										<img
+											style="width: 20px; padding-right: 10px"
+											src="/static/img/watch.png"
+										/>
+										<img style="width: 20px" src="/static/img/comment.png" />
+									</td>
+								</tr>
+								<tr class="line">
+									<td>
+										<span class="orange">김멋사</span
+										>님
+									</td>
+									<td>IT 공모전 같이 참가하실 PEER 구합니다</td>
+									<td>
+										<img
+											style="width: 20px; padding-right: 10px"
+											src="/static/img/watch.png"
+										/>
+										<img style="width: 20px" src="/static/img/comment.png" />
+									</td>
+								</tr>
+								<tr class="line">
+									<td>
+										<span class="orange">김멋사</span
+										>님
+									</td>
+									<td>IT 공모전 같이 참가하실 PEER 구합니다</td>
+									<td>
+										<img
+											style="width: 20px; padding-right: 10px"
+											src="/static/img/watch.png"
+										/>
+										<img style="width: 20px" src="/static/img/comment.png" />
+									</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</section>
+			<section class="findPeer">
+				<img style="width: 100%" src="/static/img/findPeer.png">
+			</section>
+		</div>
+		<img style="width: 100%" src="/static/img/Vector.png" />
+		<script src="/static/js/profilemodal.js"></script>
+		<script src="/static/js/allcontent.js"></script>
+	</body>
 </html>

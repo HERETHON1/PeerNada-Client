@@ -61,6 +61,8 @@ def postcreate(request):
     else:
         form = PostForm()
     return render(request, 'post_form.html', {'form':form})
+def mypage(request):
+    return render(request,'mypage.html')
 
 def detail(request):
     # post_detail = get_object_or_404(Post, pk=post_id)

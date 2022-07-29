@@ -15,6 +15,7 @@ urlpatterns = [
     path('create/', views.create, name="create"),
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
+    path('mypage/', views.mypage, name='mypage'),
     path('signup/', views.signup, name='signup'),    
     # path('profile/', accounts_views.profile, name="profile"),
     # path('profile_mod/', accounts_views.profile_mod, name="profile_mod"),
