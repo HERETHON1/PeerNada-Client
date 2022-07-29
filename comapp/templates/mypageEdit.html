@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>피어peer나다</title>
+		<link rel="stylesheet" href="css/mypage.css" />
+	</head>
+	<body>
+		<header>
+			<a href="loginPage.html">로그인</a>
+			<a href="signupPage.html">회원가입</a>
+		</header>
+		<nav class="navbar">
+			<div class="navbar_logo">
+				<img src="./image/navLogo.svg" />
+			</div>
+			<ul class="navbar_menu">
+				<li class="homenav"><a href="index.html">홈</a></li>
+				<li><a href="posterPage.html">공모전</a></li>
+				<li><a href="content.html">게시판</a></li>
+			</ul>
+		</nav>
+    <div class="mypageform">
+			<div class="profile">
+				<p>프로필 수정</p>
+				<img src="./image/profile.svg">
+				<p>김멋사</p>
+			</div>
+			<div class="editform">			
+				<div class="left">
+
+					<p>MBTI</p>
+					<input type="text" placeholder="ISTJ" />
+					<p>선호하는 회의 방식</p>
+					<div class="meeting">
+						<input type="radio" id="meeting" name="shop" checked />
+						<label for="meeting">온라인</label>
+						<input type="radio" id="meeting2" name="shop" />
+						<label for="meeting2">오프라인</label>
+					</div>
+					<p>선호하는 피드백 방식</p>
+					<div class="feedback">
+						<input type="radio" id="feedback" name="s" checked />
+						<label for="feedback">직설적으로</label>
+						<input type="radio" id="feedback2" name="s" />
+						<label for="feedback2">우회적으로</label>
+					</div>
+					<p>선호하는 진행 방식</p>
+					<div class="select">
+						<input type="radio" id="select" name="sh" checked />
+						<label for="select">계획 철저히</label>
+						<input type="radio" id="select2" name="sh" />
+						<label for="select2">일단 시작</label>
+					</div>
+				</div>
+				<div class="center"></div>
+				<div class="right">
+					<p>한 줄 소개</p>
+					<input type="text" placeholder="아자자자자자자자 화이팅 있게 잘해봅시다" />
+					<p>주요 활동</p>
+					<input type="text" placeholder="기획, 디자인, 개발, 데이터 블라블라" />
+					<p>포트폴리오</p>
+					<div class="portDiv">
+						<img src="./image/portIcon.svg">
+					</div>
+				</div>
+			</div>
+			<button class="finish">수정 완료</button>
+		</div>
+</html>

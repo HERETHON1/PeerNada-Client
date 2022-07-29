@@ -50,9 +50,9 @@ a {
 	background: #f3f3f3;
 	border-radius: 50px;
 	width: 800px;
-	height: 796px;
 	margin: 60px auto;
 	padding-top: 140px;
+	padding-bottom: 30px;
 }
 .signupForm img {
 	display: block;
@@ -64,7 +64,10 @@ a {
 .idinput,
 .pwinput,
 .pwCinput,
-.emailinput {
+.emailinput,
+.mbtiinput,
+.introInput,
+.activeinput {
 	display: block;
 	width: 30%;
 	justify-items: center;
@@ -117,12 +120,62 @@ a {
 	margin-bottom: 20px;
 	cursor: pointer;
 }
-p {
+
+.gogo:hover,
+.gogo:active {
+	color: black;
+}
+
+.gogogo {
 	text-align: center;
 	color: #888888;
 	margin-bottom: 0px;
+	font-size: 15px;
+	font-weight: 500;
 }
 .gogo:hover,
 .gogo:active {
+	color: black;
+}
+.meeting,
+.select,
+.feedback {
+	margin: auto;
+	width: 370px;
+}
+.meeting input[type='radio'],
+.select input[type='radio'],
+.feedback input[type='radio'] {
+	display: none;
+}
+p {
+	font-weight: 700;
+	font-size: 20px;
+	text-align: center;
+	color: black;
+	margin-bottom: 20px;
+}
+.meeting input[type='radio'] + label,
+.select input[type='radio'] + label,
+.feedback input[type='radio'] + label {
+	display: inline-block;
+	cursor: pointer;
+	height: 39px;
+	width: 180px;
+	border: none;
+	text-align: center;
+	font-weight: 700;
+	font-size: 18px;
+	border-radius: 10px 10px 10px 10px;
+	background-color: #fff;
+	color: #888888;
+	padding-top: 11px;
+	text-align: center;
+}
+
+.meeting input[type='radio']:checked + label,
+.select input[type='radio']:checked + label,
+.feedback input[type='radio']:checked + label {
+	background-color: #fbdcbf;
 	color: black;
 }

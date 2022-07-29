@@ -66,6 +66,35 @@
           placeholder="비밀번호확인"
         />
         <input class="emailinput" placeholder="이메일" type="email" />
+        <p>MBTI</p>
+        <input class="mbtiinput"type="text" placeholder="ISTJ" />
+        <p>선호하는 회의 방식</p>
+        <div class="meeting">
+          <input type="radio" id="meeting" name="shop" checked />
+          <label for="meeting">온라인</label>
+          <input type="radio" id="meeting2" name="shop" />
+          <label for="meeting2">오프라인</label>
+        </div>
+        <p>선호하는 피드백 방식</p>
+        <div class="feedback">
+          <input type="radio" id="feedback" name="s" checked />
+          <label for="feedback">직설적으로</label>
+          <input type="radio" id="feedback2" name="s" />
+          <label for="feedback2">우회적으로</label>
+        </div>
+        <p>선호하는 진행 방식</p>
+        <div class="select">
+          <input type="radio" id="select" name="sh" checked />
+          <label for="select">계획 철저히</label>
+          <input type="radio" id="select2" name="sh" />
+          <label for="select2">일단 시작</label>
+        </div>
+      <div class="center"></div>
+      <div class="right">
+        <p>한 줄 소개</p>
+        <input class="introInput" type="text" placeholder="나를 표현하는 한 줄을 작성하세요" />
+        <p>주요 활동</p>
+        <input class="activeinput" type="text" placeholder="관심이쓴 분야, 활동을 작성하세요" />
         <input
           type="submit"
           class="registerbtn"
@@ -74,11 +103,11 @@
         />
       </form>
       <div class="goregister">
-        <p>
+        <h2 class="gogogo">
           이미 계정이 있으신가요?<br /><a class="gogo" href="{% url 'login' %}"
             >로그인하러 가기</a
           >
-        </p>
+        </h2>
       </div>
     </div>
     <!-- Bootstrap core JavaScript-->
